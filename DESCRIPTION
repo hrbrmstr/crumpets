@@ -1,0 +1,26 @@
+Package: crumpets
+Type: Package
+Title: Tools to Work with and Manage 'gitea'
+Version: 0.1.0
+Date: 2018-06-06
+Authors@R: c(
+    person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre"), 
+           comment = c(ORCID = "0000-0001-5670-2640"))
+  )
+Maintainer: Bob Rudis <bob@rud.is>
+Description: The 'gitea' project is a 'GitHub'-/'GitLab'-like web user interface
+    to 'git' repositories. Methods are provided to access and administer 'gitea'
+    programmatically.
+URL: https://gitlab.com/hrbrmstr/crumpets
+BugReports: https://gitlab.com/hrbrmstr/crumpets/issues
+Encoding: UTF-8
+License: MIT + file LICENSE
+Suggests:
+    testthat,
+    covr
+Depends:
+    R (>= 3.2.0)
+Imports:
+    httr,
+    jsonlite
+RoxygenNote: 6.0.1.9000
