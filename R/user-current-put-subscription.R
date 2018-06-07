@@ -15,7 +15,7 @@ user_current_put_subscription <- function(api_endpoint = Sys.getenv('GITEA_BASE_
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/subscription')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/subscription'))
 
   httr::VERB(
     verb = 'PUT',

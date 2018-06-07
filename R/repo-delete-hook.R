@@ -15,7 +15,7 @@ repo_delete_hook <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{user}/{repo}/hooks/{id}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{user}/{repo}/hooks/{id}'))
 
   httr::VERB(
     verb = 'DELETE',

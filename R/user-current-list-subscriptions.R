@@ -15,7 +15,7 @@ user_current_list_subscriptions <- function(api_endpoint = Sys.getenv('GITEA_BAS
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/user/subscriptions')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/user/subscriptions'))
 
   httr::VERB(
     verb = 'GET',

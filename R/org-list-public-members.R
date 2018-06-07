@@ -15,7 +15,7 @@ org_list_public_members <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/orgs/{org}/public_members')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/orgs/{org}/public_members'))
 
   httr::VERB(
     verb = 'GET',

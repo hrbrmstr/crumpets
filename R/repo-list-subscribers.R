@@ -15,7 +15,7 @@ repo_list_subscribers <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/subscribers')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/subscribers'))
 
   httr::VERB(
     verb = 'GET',

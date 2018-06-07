@@ -15,7 +15,7 @@ repo_list_stargazers <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/stargazers')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/stargazers'))
 
   httr::VERB(
     verb = 'GET',

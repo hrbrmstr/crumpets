@@ -15,7 +15,7 @@ user_current_check_starring <- function(api_endpoint = Sys.getenv('GITEA_BASE_UR
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/user/starred/{owner}/{repo}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/user/starred/{owner}/{repo}'))
 
   httr::VERB(
     verb = 'GET',

@@ -15,7 +15,7 @@ issue_delete_comment <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/issues/comments/{id}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/issues/comments/{id}'))
 
   httr::VERB(
     verb = 'DELETE',

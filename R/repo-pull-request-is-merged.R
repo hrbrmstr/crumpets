@@ -15,7 +15,7 @@ repo_pull_request_is_merged <- function(api_endpoint = Sys.getenv('GITEA_BASE_UR
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/pulls/{index}/merge')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/pulls/{index}/merge'))
 
   httr::VERB(
     verb = 'GET',

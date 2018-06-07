@@ -15,7 +15,7 @@ org_list_team_members <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/teams/{id}/members')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/teams/{id}/members'))
 
   httr::VERB(
     verb = 'GET',

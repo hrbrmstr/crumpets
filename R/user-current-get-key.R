@@ -15,7 +15,7 @@ user_current_get_key <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/user/keys/{id}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/user/keys/{id}'))
 
   httr::VERB(
     verb = 'GET',

@@ -15,7 +15,7 @@ admin_delete_user_public_key <- function(api_endpoint = Sys.getenv('GITEA_BASE_U
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/admin/users/{username}/keys/{id}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/admin/users/{username}/keys/{id}'))
 
   httr::VERB(
     verb = 'DELETE',

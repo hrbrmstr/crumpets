@@ -15,7 +15,7 @@ user_list_starred <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/users/{username}/starred')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/users/{username}/starred'))
 
   httr::VERB(
     verb = 'GET',

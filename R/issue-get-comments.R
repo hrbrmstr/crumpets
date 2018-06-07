@@ -15,7 +15,7 @@ issue_get_comments <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/issue/{index}/comments')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/issue/{index}/comments'))
 
   httr::VERB(
     verb = 'GET',

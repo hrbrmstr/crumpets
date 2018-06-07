@@ -15,7 +15,7 @@ repo_edit_pull_request <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/pulls/{index}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/pulls/{index}'))
 
   httr::VERB(
     verb = 'PATCH',

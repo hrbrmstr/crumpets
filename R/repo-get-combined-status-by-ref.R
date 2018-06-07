@@ -15,7 +15,7 @@ repo_get_combined_status_by_ref <- function(api_endpoint = Sys.getenv('GITEA_BAS
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/commits/{ref}/statuses')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/commits/{ref}/statuses'))
 
   httr::VERB(
     verb = 'GET',

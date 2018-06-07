@@ -15,7 +15,7 @@ user_current_check_following <- function(api_endpoint = Sys.getenv('GITEA_BASE_U
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/user/following/{followee}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/user/following/{followee}'))
 
   httr::VERB(
     verb = 'GET',

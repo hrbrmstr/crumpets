@@ -15,7 +15,7 @@ repo_get_raw_file <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/{owner}/{repo}/raw/{filepath}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/{owner}/{repo}/raw/{filepath}'))
 
   httr::VERB(
     verb = 'GET',

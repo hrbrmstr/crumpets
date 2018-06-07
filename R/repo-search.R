@@ -15,7 +15,7 @@ repo_search <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/repos/search')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/repos/search'))
 
   httr::VERB(
     verb = 'GET',

@@ -15,7 +15,7 @@ org_publicize_member <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/orgs/{org}/public_members/{username}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/orgs/{org}/public_members/{username}'))
 
   httr::VERB(
     verb = 'PUT',

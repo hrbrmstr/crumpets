@@ -15,7 +15,7 @@ org_add_team_member <- function(api_endpoint = Sys.getenv('GITEA_BASE_URL'),
 
   api_endpoint <- s('/$', '', api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, 'api/v1', '/teams/{id}/repos/{org}/{repo}')
+  gitea_url <- file.path(api_endpoint, 'api/v1', s('^/', '', '/teams/{id}/repos/{org}/{repo}'))
 
   httr::VERB(
     verb = 'DELETE',
