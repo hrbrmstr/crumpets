@@ -15,7 +15,7 @@ user_current_list_following <- function(api_endpoint = Sys.getenv("GITEA_BASE_UR
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/user/following"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/user/following"))
 
   httr::VERB(
     verb = "GET",
@@ -23,7 +23,7 @@ user_current_list_following <- function(api_endpoint = Sys.getenv("GITEA_BASE_UR
     body = list(),
     query = list(access_token = gitea_token),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

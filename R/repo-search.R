@@ -20,7 +20,7 @@ repo_search <- function(q, uid, page, limit, mode, exclusive, api_endpoint = Sys
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/search"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/search"))
 
   httr::VERB(
     verb = "GET",
@@ -36,7 +36,7 @@ repo_search <- function(q, uid, page, limit, mode, exclusive, api_endpoint = Sys
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

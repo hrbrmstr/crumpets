@@ -17,7 +17,7 @@ repo_get_raw_file <- function(owner, repo, filepath, api_endpoint = Sys.getenv("
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/raw/{filepath}"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/raw/{filepath}"))
 
   httr::VERB(
     verb = "GET",
@@ -30,7 +30,7 @@ repo_get_raw_file <- function(owner, repo, filepath, api_endpoint = Sys.getenv("
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

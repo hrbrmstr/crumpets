@@ -2,26 +2,26 @@
 % Please edit documentation in R/user-get.R
 \name{user_get}
 \alias{user_get}
-\title{WIP - Get a user}
+\title{Get a user}
 \usage{
-user_get(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+user_get(username, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{username}{username of user to get}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+\code{list}
 }
 \description{
-WIP - Get a user
-}
-\note{
-NOT IMPLEMENTED YET
+Get a user
 }
 \examples{
 \dontrun{
+user_get("hrbrmstr")
 }
 }

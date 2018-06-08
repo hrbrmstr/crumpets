@@ -17,7 +17,7 @@ repo_pull_request_is_merged <- function(owner, repo, index, api_endpoint = Sys.g
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/pulls/{index}/merge"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/pulls/{index}/merge"))
 
   httr::VERB(
     verb = "GET",
@@ -30,7 +30,7 @@ repo_pull_request_is_merged <- function(owner, repo, index, api_endpoint = Sys.g
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

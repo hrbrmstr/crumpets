@@ -4,11 +4,16 @@
 \alias{user_check_following}
 \title{WIP - Check if one user is following another user}
 \usage{
-user_check_following(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+user_check_following(follower, followee,
+  api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{follower}{username of following user}
+
+\item{followee}{username of followed user}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }

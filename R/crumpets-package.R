@@ -9,5 +9,6 @@
 #' @docType package
 #' @author Bob Rudis (bob@@rud.is)
 #' @import httr
+#' @import glue
 #' @importFrom jsonlite fromJSON
 NULL

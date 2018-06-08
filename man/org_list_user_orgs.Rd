@@ -4,11 +4,13 @@
 \alias{org_list_user_orgs}
 \title{WIP - List a user's organizations}
 \usage{
-org_list_user_orgs(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+org_list_user_orgs(username, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{username}{username of user}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }

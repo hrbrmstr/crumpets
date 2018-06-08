@@ -17,7 +17,7 @@ repo_get_editor_config <- function(owner, repo, filepath, api_endpoint = Sys.get
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/editorconfig/{filepath}"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/editorconfig/{filepath}"))
 
   httr::VERB(
     verb = "GET",
@@ -30,7 +30,7 @@ repo_get_editor_config <- function(owner, repo, filepath, api_endpoint = Sys.get
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

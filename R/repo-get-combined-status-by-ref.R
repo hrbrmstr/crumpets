@@ -17,7 +17,7 @@ repo_get_combined_status_by_ref <- function(owner, repo, ref, api_endpoint = Sys
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/commits/{ref}/statuses"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/commits/{ref}/statuses"))
 
   httr::VERB(
     verb = "GET",
@@ -30,7 +30,7 @@ repo_get_combined_status_by_ref <- function(owner, repo, ref, api_endpoint = Sys
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

@@ -2,26 +2,39 @@
 % Please edit documentation in R/repo-migrate.R
 \name{repo_migrate}
 \alias{repo_migrate}
-\title{WIP - Migrate a remote git repository}
+\title{Migrate a remote git repository}
 \usage{
-repo_migrate(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+repo_migrate(clone_url, repo_name, uid = NULL, description = "",
+  mirror = TRUE, private = FALSE,
+  api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{clone_url}{\code{git://example.com/owner/repo[.git]}-style URL}
+
+\item{repo_name}{name for the gitea repo}
+
+\item{uid}{numeric. Get it from \code{\link[=user_get]{user_get()}} or \code{\link[=user_get_current]{user_get_current()}}. If you're the
+first/only users this is very likely \code{1}. If \code{NULL} will use \code{\link[=user_get_current]{user_get_current()}}.}
+
+\item{description}{repo description}
+
+\item{mirror}{should this be a mirror? defaults to \code{TRUE}}
+
+\item{private}{should this default to "private"? defaults to \code{TRUE}}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+\code{list}
 }
 \description{
-WIP - Migrate a remote git repository
-}
-\note{
-NOT IMPLEMENTED YET
+Migrate a remote git repository
 }
 \examples{
 \dontrun{
+repo_migrate("git://github.com/hrbrmstr/ssllabs", "sslabs")
 }
 }

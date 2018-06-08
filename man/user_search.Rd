@@ -4,11 +4,15 @@
 \alias{user_search}
 \title{WIP - Search for users}
 \usage{
-user_search(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+user_search(q, limit, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{q}{keyword}
+
+\item{limit}{maximum number of users to return}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }

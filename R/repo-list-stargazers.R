@@ -16,7 +16,7 @@ repo_list_stargazers <- function(owner, repo, api_endpoint = Sys.getenv("GITEA_B
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/stargazers"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/stargazers"))
 
   httr::VERB(
     verb = "GET",
@@ -28,7 +28,7 @@ repo_list_stargazers <- function(owner, repo, api_endpoint = Sys.getenv("GITEA_B
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

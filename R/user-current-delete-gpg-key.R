@@ -15,7 +15,7 @@ user_current_delete_gpg_key <- function(api_endpoint = Sys.getenv("GITEA_BASE_UR
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/user/gpg_keys/{id}"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/user/gpg_keys/{id}"))
 
   httr::VERB(
     verb = "DELETE",
@@ -23,7 +23,7 @@ user_current_delete_gpg_key <- function(api_endpoint = Sys.getenv("GITEA_BASE_UR
     body = list(),
     query = NULL,
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

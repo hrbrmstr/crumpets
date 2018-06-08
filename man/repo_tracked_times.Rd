@@ -4,11 +4,15 @@
 \alias{repo_tracked_times}
 \title{WIP - List a repo's tracked times}
 \usage{
-repo_tracked_times(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+repo_tracked_times(owner, repo, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{owner}{owner of the repo}
+
+\item{repo}{name of the repo}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }

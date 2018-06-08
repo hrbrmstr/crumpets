@@ -17,7 +17,7 @@ repo_get_hook <- function(owner, repo, id, api_endpoint = Sys.getenv("GITEA_BASE
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/hooks/{id}"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/hooks/{id}"))
 
   httr::VERB(
     verb = "GET",
@@ -30,7 +30,7 @@ repo_get_hook <- function(owner, repo, id, api_endpoint = Sys.getenv("GITEA_BASE
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

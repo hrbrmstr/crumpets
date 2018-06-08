@@ -2,26 +2,24 @@
 % Please edit documentation in R/user-current-list-repos.R
 \name{user_current_list_repos}
 \alias{user_current_list_repos}
-\title{WIP - List the repos that the authenticated user owns or has access to}
+\title{List the repos that the authenticated user owns or has access to}
 \usage{
 user_current_list_repos(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+data frame
 }
 \description{
-WIP - List the repos that the authenticated user owns or has access to
-}
-\note{
-NOT IMPLEMENTED YET
+List the repos that the authenticated user owns or has access to
 }
 \examples{
 \dontrun{
+user_current_list_repos()
 }
 }

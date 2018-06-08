@@ -2,26 +2,26 @@
 % Please edit documentation in R/user-list-repos.R
 \name{user_list_repos}
 \alias{user_list_repos}
-\title{WIP - List the repos owned by the given user}
+\title{List the repos owned by the given user}
 \usage{
-user_list_repos(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+user_list_repos(username, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{username}{username of user}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+data frame
 }
 \description{
-WIP - List the repos owned by the given user
-}
-\note{
-NOT IMPLEMENTED YET
+List the repos owned by the given user
 }
 \examples{
 \dontrun{
+user_list_repos("hrbrmstr")
 }
 }

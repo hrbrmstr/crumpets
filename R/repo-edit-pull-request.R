@@ -15,7 +15,7 @@ repo_edit_pull_request <- function(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/pulls/{index}"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/pulls/{index}"))
 
   httr::VERB(
     verb = "PATCH",
@@ -23,7 +23,7 @@ repo_edit_pull_request <- function(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
     body = list(),
     query = NULL,
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

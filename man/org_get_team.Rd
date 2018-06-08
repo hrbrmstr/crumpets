@@ -4,11 +4,13 @@
 \alias{org_get_team}
 \title{WIP - Get a team}
 \usage{
-org_get_team(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+org_get_team(id, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{id}{id of the team to get}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }

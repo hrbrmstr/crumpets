@@ -21,9 +21,16 @@ you're welcome to join in the fun of building out 146 `httr` functions O_o.
 
 ## What's Inside The Tin
 
-The following functions are implemented:
+_There are at least 140 functions in this package so please see the manual pages in the online R help system._
 
-_There are at least 146 function in this package so please see the manual pages in the online R help system._
+The following functions are implemented (i.e. are not in a WIP status):
+
+- `get_version`:  Returns the version of the Gitea application
+- `repo_migrate`:  Migrate a remote git repository
+- `user_current_list_repos`:  List the repos that the authenticated user owns or has access to
+- `user_get`:  Get a user
+- `user_get_current`:  Get the authenticated user
+- `user_list_repos`:  List the repos owned by the given user
 
 ## Installation
 
@@ -45,3 +52,6 @@ packageVersion("crumpets")
 
 ```
 
+```{r}
+get_version()
+```

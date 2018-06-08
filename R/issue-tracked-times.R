@@ -16,7 +16,7 @@ issue_tracked_times <- function(owner, repo, api_endpoint = Sys.getenv("GITEA_BA
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/issues/{index}/times"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/issues/{index}/times"))
 
   httr::VERB(
     verb = "GET",
@@ -28,7 +28,7 @@ issue_tracked_times <- function(owner, repo, api_endpoint = Sys.getenv("GITEA_BA
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

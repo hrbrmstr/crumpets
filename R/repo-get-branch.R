@@ -17,7 +17,7 @@ repo_get_branch <- function(owner, repo, branch, api_endpoint = Sys.getenv("GITE
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/repos/{owner}/{repo}/branches/{branch}"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/branches/{branch}"))
 
   httr::VERB(
     verb = "GET",
@@ -30,7 +30,7 @@ repo_get_branch <- function(owner, repo, branch, api_endpoint = Sys.getenv("GITE
       access_token = gitea_token
     ),
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)

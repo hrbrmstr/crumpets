@@ -4,11 +4,24 @@
 \alias{repo_search}
 \title{WIP - Search for repositories}
 \usage{
-repo_search(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+repo_search(q, uid, page, limit, mode, exclusive,
+  api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{q}{keyword}
+
+\item{uid}{search only for repos that the user with the given id owns or contributes to}
+
+\item{page}{page number of results to return (1-based)}
+
+\item{limit}{page size of results, maximum page size is 50}
+
+\item{mode}{type of repository to search for. Supported values are "fork", "source", "mirror" and "collaborative"}
+
+\item{exclusive}{if \code{uid} is given, search only for repos that the user owns}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }

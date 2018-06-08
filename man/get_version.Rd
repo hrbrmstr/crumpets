@@ -2,26 +2,24 @@
 % Please edit documentation in R/get-version.R
 \name{get_version}
 \alias{get_version}
-\title{WIP - Returns the version of the Gitea application}
+\title{Returns the version of the Gitea application}
 \usage{
 get_version(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+character
 }
 \description{
-WIP - Returns the version of the Gitea application
-}
-\note{
-NOT IMPLEMENTED YET
+Returns the version of the Gitea application
 }
 \examples{
 \dontrun{
+get_version()
 }
 }

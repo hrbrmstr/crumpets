@@ -4,11 +4,15 @@
 \alias{repo_list_hooks}
 \title{WIP - List the hooks in a repository}
 \usage{
-repo_list_hooks(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+repo_list_hooks(owner, repo, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
-\item{api_endpoint}{URL prefix for your gitea server}
+\item{owner}{owner of the repo}
+
+\item{repo}{name of the repo}
+
+\item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }

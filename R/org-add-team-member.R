@@ -15,7 +15,7 @@ org_add_team_member <- function(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
-  gitea_url <- file.path(api_endpoint, "api/v1", s("^/", "", "/teams/{id}/repos/{org}/{repo}"))
+  gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/teams/{id}/repos/{org}/{repo}"))
 
   httr::VERB(
     verb = "DELETE",
@@ -23,7 +23,7 @@ org_add_team_member <- function(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
     body = list(),
     query = NULL,
     encode = "json",
-    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets"),
+    httr::user_agent("crumpets r package <https://gitlab.com/hrbrmstr/crumpets")
   ) -> res
 
   httr::stop_for_status(res)
