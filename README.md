@@ -19,13 +19,19 @@ building out 146 `httr` functions O\_o.
 
 ## What’s Inside The Tin
 
-*There are at least 140 functions in this package so please see the
-manual pages in the online R help system.*
+*There are at nearly 140 other functions in this package so please see
+the manual pages in the online R help system.*
 
 The following functions are implemented (i.e. are not in a WIP status):
 
   - `get_version`: Returns the version of the Gitea application
+  - `org_list_user_orgs`: List a user’s organizations
+  - `org_get`: Get an organization
+  - `repo_get`: Get a repository
+  - `repo_get_archive`: Get an archive of a repository
+  - `repo_get_raw_file`: Get a file from a repository
   - `repo_migrate`: Migrate a remote git repository
+  - `repo_mirror_sync`: Sync a mirrored repository
   - `user_current_list_repos`: List the repos that the authenticated
     user owns or has access to
   - `user_get`: Get a user
