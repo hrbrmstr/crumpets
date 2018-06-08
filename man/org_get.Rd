@@ -2,7 +2,7 @@
 % Please edit documentation in R/org-get.R
 \name{org_get}
 \alias{org_get}
-\title{WIP - Get an organization}
+\title{Get an organization}
 \usage{
 org_get(org, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
@@ -15,15 +15,13 @@ org_get(org, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+\code{list}
 }
 \description{
-WIP - Get an organization
-}
-\note{
-NOT IMPLEMENTED YET
+Get an organization
 }
 \examples{
 \dontrun{
+org_get("hrbrville")
 }
 }

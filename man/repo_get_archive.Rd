@@ -2,9 +2,9 @@
 % Please edit documentation in R/repo-get-archive.R
 \name{repo_get_archive}
 \alias{repo_get_archive}
-\title{WIP - Get an archive of a repository}
+\title{Get an archive of a repository}
 \usage{
-repo_get_archive(owner, repo, archive,
+repo_get_archive(owner, repo, archive, filepath,
   api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
@@ -20,15 +20,15 @@ repo_get_archive(owner, repo, archive,
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+raw vector
 }
 \description{
-WIP - Get an archive of a repository
-}
-\note{
-NOT IMPLEMENTED YET
+Get an archive of a repository
 }
 \examples{
 \dontrun{
+x <- repo_get_archive("hrbrmstr", "gdns", "", "master.zip")
+tf <- tempfile(fileext = ".zip")
+writeBin(x, con = tf, useBytes=TRUE)
 }
 }

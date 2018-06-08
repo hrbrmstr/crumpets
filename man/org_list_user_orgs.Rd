@@ -2,7 +2,7 @@
 % Please edit documentation in R/org-list-user-orgs.R
 \name{org_list_user_orgs}
 \alias{org_list_user_orgs}
-\title{WIP - List a user's organizations}
+\title{List a user's organizations}
 \usage{
 org_list_user_orgs(username, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
@@ -18,12 +18,13 @@ org_list_user_orgs(username, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
 something
 }
 \description{
-WIP - List a user's organizations
+List a user's organizations
 }
 \note{
-NOT IMPLEMENTED YET
+this appears to not be working on the Gitea side
 }
 \examples{
 \dontrun{
+org_list_user_orgs("hrbrmstr")
 }
 }

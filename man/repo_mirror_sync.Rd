@@ -2,26 +2,28 @@
 % Please edit documentation in R/repo-mirror-sync.R
 \name{repo_mirror_sync}
 \alias{repo_mirror_sync}
-\title{WIP - Sync a mirrored repository}
+\title{Sync a mirrored repository}
 \usage{
-repo_mirror_sync(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+repo_mirror_sync(owner, repo, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
 }
 \arguments{
+\item{owner}{repo owner string}
+
+\item{repo}{repo string}
+
 \item{api_endpoint}{URL prefix for your gitea server (no trailing '/')}
 
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+nothing if successful
 }
 \description{
-WIP - Sync a mirrored repository
-}
-\note{
-NOT IMPLEMENTED YET
+Sync a mirrored repository
 }
 \examples{
 \dontrun{
+repo_mirror_sync("hrbrmstr", "crumpets")
 }
 }

@@ -1,26 +1,25 @@
-#' WIP - Get an organization
+#' Get an organization
 #'
 #' @md
-#' @note NOT IMPLEMENTED YET
 #' @param org name of the organization to get
 #' @param api_endpoint URL prefix for your gitea server (no trailing '/')
 #' @param gitea_token NOTE: we use `access_token` in the package
-#' @return something
+#' @return `list`
 #' @export
 #' @examples \dontrun{
+#' org_get("hrbrville")
 #' }
 org_get <- function(org, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
                     gitea_token = Sys.getenv("GITEA_PAT")) {
-  stop("Not implemented yet")
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
   gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/orgs/{org}"))
+  gitea_url <- glue::glue_data(list(org=org), gitea_url)
 
   httr::VERB(
     verb = "GET",
     url = gitea_url,
-    body = list(),
     query = list(
       `org` = `org`,
       access_token = gitea_token
@@ -34,5 +33,5 @@ org_get <- function(org, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   out <- httr::content(res, as = "text")
   out <- jsonlite::fromJSON(out)
 
-  invisible(out)
+  out
 }

@@ -1,7 +1,6 @@
-#' WIP - Get a repository
+#' Get a repository
 #'
 #' @md
-#' @note NOT IMPLEMENTED YET
 #' @param owner owner of the repo
 #' @param repo name of the repo
 #' @param api_endpoint URL prefix for your gitea server (no trailing '/')
@@ -12,7 +11,6 @@
 #' }
 repo_get <- function(owner, repo, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
                      gitea_token = Sys.getenv("GITEA_PAT")) {
-  stop("Not implemented yet")
 
   api_endpoint <- sub("/$", "", api_endpoint)
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/repo-get-raw-file.R
 \name{repo_get_raw_file}
 \alias{repo_get_raw_file}
-\title{WIP - Get a file from a repository}
+\title{Get a file from a repository}
 \usage{
 repo_get_raw_file(owner, repo, filepath,
   api_endpoint = Sys.getenv("GITEA_BASE_URL"),
@@ -20,15 +20,15 @@ repo_get_raw_file(owner, repo, filepath,
 \item{gitea_token}{NOTE: we use \code{access_token} in the package}
 }
 \value{
-something
+if MIME type was intuited and \code{\link[httr:content]{httr::content()}} can decode it, then a decoded
+object, otherwise a raw vector
 }
 \description{
-WIP - Get a file from a repository
-}
-\note{
-NOT IMPLEMENTED YET
+Get a file from a repository
 }
 \examples{
 \dontrun{
+repo_get_raw_file("hrbrmstr", "ggalt", "/man/figures/coordproj01.png")
+repo_get_raw_file("hrbrmstr", "securitytxt", "/R/RcppExports.R")
 }
 }

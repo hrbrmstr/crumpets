@@ -2,7 +2,7 @@
 % Please edit documentation in R/org-list-current-user-orgs.R
 \name{org_list_current_user_orgs}
 \alias{org_list_current_user_orgs}
-\title{WIP - List the current user's organizations}
+\title{List the current user's organizations}
 \usage{
 org_list_current_user_orgs(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
@@ -16,12 +16,10 @@ org_list_current_user_orgs(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
 something
 }
 \description{
-WIP - List the current user's organizations
-}
-\note{
-NOT IMPLEMENTED YET
+List the current user's organizations
 }
 \examples{
 \dontrun{
+org_list_current_user_orgs()
 }
 }

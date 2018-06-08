@@ -2,7 +2,7 @@
 % Please edit documentation in R/repo-get.R
 \name{repo_get}
 \alias{repo_get}
-\title{WIP - Get a repository}
+\title{Get a repository}
 \usage{
 repo_get(owner, repo, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
   gitea_token = Sys.getenv("GITEA_PAT"))
@@ -20,10 +20,7 @@ repo_get(owner, repo, api_endpoint = Sys.getenv("GITEA_BASE_URL"),
 something
 }
 \description{
-WIP - Get a repository
-}
-\note{
-NOT IMPLEMENTED YET
+Get a repository
 }
 \examples{
 \dontrun{

@@ -1,21 +1,23 @@
-#' WIP - Sync a mirrored repository
+#' Sync a mirrored repository
 #'
 #' @md
-#' @note NOT IMPLEMENTED YET
-#'
+#' @param owner repo owner string
+#' @param repo repo string
 #' @param api_endpoint URL prefix for your gitea server (no trailing '/')
 #' @param gitea_token NOTE: we use `access_token` in the package
-#' @return something
+#' @return nothing if successful
 #' @export
 #' @examples \dontrun{
+#' repo_mirror_sync("hrbrmstr", "crumpets")
 #' }
-repo_mirror_sync <- function(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
+repo_mirror_sync <- function(owner, repo,
+                             api_endpoint = Sys.getenv("GITEA_BASE_URL"),
                              gitea_token = Sys.getenv("GITEA_PAT")) {
-  stop("Not implemented yet")
 
   api_endpoint <- sub("/$", "", api_endpoint)
 
   gitea_url <- file.path(api_endpoint, "api/v1", sub("^/", "", "/repos/{owner}/{repo}/mirror-sync"))
+  gitea_url <- glue::glue_data(list(owner=owner, repo=repo), gitea_url)
 
   httr::VERB(
     verb = "POST",
@@ -28,8 +30,5 @@ repo_mirror_sync <- function(api_endpoint = Sys.getenv("GITEA_BASE_URL"),
 
   httr::stop_for_status(res)
 
-  out <- httr::content(res, as = "text")
-  out <- jsonlite::fromJSON(out)
-
-  invisible(out)
+  invisible()
 }
