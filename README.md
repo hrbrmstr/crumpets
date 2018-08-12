@@ -15,7 +15,7 @@ The function skeletons were generated from the Swagger definition file
 for Gitea. These will be incrementally fully formed and the ones that
 are still a WIP will hard error with a `stop()` message. Function titles
 prefied with `WIP` are WIP and you’re welcome to join in the fun of
-building out 146 `httr` functions O\_o.
+building out 145 `httr` functions O\_o.
 
 ## What’s Inside The Tin
 
@@ -26,6 +26,7 @@ The following functions are implemented (i.e. are not in a WIP status):
 
   - `get_version`: Returns the version of the Gitea application
   - `org_list_user_orgs`: List a user’s organizations
+  - `create_user_repo`: Create a repository as the owner
   - `org_get`: Get an organization
   - `repo_get`: Get a repository
   - `repo_get_archive`: Get an archive of a repository
